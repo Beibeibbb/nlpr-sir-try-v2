@@ -1,0 +1,22 @@
+# IDEs
+.idea/
+.vscode
+
+# Hugo output at the repository root. Keep the Next.js logo in web/public.
+public/
+resources/
+!web/public/
+!web/public/logo.png
+web/public/media/
+
+.*
+!.gitignore
+!.github/
+!.github/**
+
+# Next.js site
+node_modules/
+web/node_modules/
+web/.next/
+web/out/
+web/src/generated/
