@@ -6,6 +6,10 @@ import type { NewsItem, Publication, ResearchArea } from "@/lib/types";
  * (updated 1 April 2026), and the previous SIR group pages.
  * New papers follow Dr. Wang's publication list and bibliographic records. Abstracts are
  * short descriptions of the published title and venue, not reconstructed experiments.
+ * Latest work checked on 8 October 2026: https://wylcasia.github.io/
+ * MIEdit: https://link.springer.com/chapter/10.1007/978-3-032-37029-7_15
+ * FLI: https://doi.org/10.1016/j.xjon.2026.101930
+ * FedCCA: https://proceedings.mlr.press/v300/luo26a.html
  */
 
 export const personPatches: Record<
@@ -53,6 +57,61 @@ export const personPatches: Record<
 };
 
 export const extraPublications: Publication[] = [
+  {
+    slug: "wei-eccv-2026-miedit",
+    title: "Multi-History-Step SDE Inversion for Image Editing with Superior Regional Awareness",
+    authors: ["Haiyan Wei", "Yunlong Wang", "Huaibo Huang", "Zhenan Sun", "Kunbo Zhang"],
+    date: "2026-09-15",
+    year: 2026,
+    venue: "European Conference on Computer Vision (ECCV)",
+    kind: "conference",
+    abstract: "MIEdit edits images with diffusion models without additional training. It combines multi-history-step SDE inversion with semantic region control to improve editing efficiency and preserve regions that should remain unchanged. The project also introduces the EditEval++ benchmark.",
+    summary: "MIEdit: efficient image editing with semantic region control at ECCV 2026.",
+    tags: ["image editing", "diffusion models"],
+    doi: "10.1007/978-3-032-37029-7_15",
+    pdf: "",
+    code: "https://github.com/Whywwwzzzg/MIEdit",
+    projects: [],
+    featured: true,
+    body: "[Project page and examples](https://whywwwzzzg.github.io/MIEdit/) · [Published paper](https://link.springer.com/chapter/10.1007/978-3-032-37029-7_15)",
+  },
+  {
+    slug: "li-jtcvs-2026-fli",
+    title: "Femtosecond Label-free Imaging: A Rapid and Reliable Alternative for Intraoperative Pathological Assessment in Thoracic Oncology",
+    authors: ["Ming Li", "Hao Yin", "Fangyi Liu", "Wendi Zhu", "Wenlong Yu", "Kunbo Zhang", "Rongkui Luo", "Fenghao Sun", "Yunlong Wang", "Boxue Zhang", "Bingwei Xu", "Xin Zhu", "Mingxiang Feng", "Lijie Tan"],
+    // Date of the publication announcement on Yunlong Wang's homepage.
+    date: "2026-06-17",
+    year: 2026,
+    venue: "JTCVS Open",
+    kind: "journal",
+    abstract: "This study explores femtosecond laser imaging of fresh tissue without staining or sectioning for intraoperative assessment in thoracic oncology. It combines optical imaging with exploratory AI analysis; further validation is needed before clinical implementation.",
+    summary: "Femtosecond label-free imaging for intraoperative tissue assessment.",
+    tags: ["computational imaging", "healthcare"],
+    doi: "10.1016/j.xjon.2026.101930",
+    pdf: "",
+    code: "",
+    projects: [],
+    featured: true,
+    body: "[Read the article](https://doi.org/10.1016/j.xjon.2026.101930)",
+  },
+  {
+    slug: "luo-aistats-2026-fedcca",
+    title: "FedCCA: Federated Canonical Correlation Analysis",
+    authors: ["Zhengquan Luo", "Kai Fong Ernest Chong", "Pengfei Wei", "Changyou Chen", "Peilin Zhao", "Renmin Han", "Chunlai Zhou", "Yunlong Wang", "Zhiqiang Xu"],
+    date: "2026-05-02",
+    year: 2026,
+    venue: "International Conference on Artificial Intelligence and Statistics (AISTATS)",
+    kind: "conference",
+    abstract: "FedCCA adapts canonical correlation analysis to distributed data. Lightweight matrix-vector operations replace costly matrix inversions, and Gaussian differential privacy supports cross-modal learning while protecting client data.",
+    summary: "Federated cross-modal learning with differential privacy at AISTATS 2026.",
+    tags: ["federated learning", "privacy", "machine learning"],
+    doi: "",
+    pdf: "https://raw.githubusercontent.com/mlresearch/v300/main/assets/luo26a/luo26a.pdf",
+    code: "",
+    projects: [],
+    featured: true,
+    body: "[Published paper and citation](https://proceedings.mlr.press/v300/luo26a.html)",
+  },
   {
     slug: "liu-cvpr-2025-prototype",
     title: "Revealing Key Details to See Differences: A Novel Prototypical Perspective for Skeleton-based Action Recognition",
@@ -292,11 +351,51 @@ export const extraPublications: Publication[] = [
 
 export const extraNews: NewsItem[] = [
   {
+    slug: "2026-ijcv-private-gaze",
+    title: "Privacy-preserving gaze estimation accepted to IJCV",
+    date: "2026-09-30",
+    kind: "news",
+    summary: "New work combines disentangled representations with split federated learning for gaze estimation.",
+    body: "Yunlong Wang announced the acceptance of **Synergizing Disentangled Representation and Split Federated Learning to Break Centralized Bottlenecks in Gaze Estimation** to the International Journal of Computer Vision (IJCV) on 30 September 2026.\n\nThe work continues his research on privacy-preserving gaze estimation. [Acceptance announcement](https://wylcasia.github.io/).",
+  },
+  {
+    slug: "2026-tianjin-light-field-award",
+    title: "Light-field imaging work receives Tianjin science and technology award",
+    date: "2026-07-06",
+    kind: "award",
+    summary: "Research on light-field imaging technology and applications received the second prize of the 2025 Tianjin Science and Technology Progress Award.",
+    body: "Yunlong Wang announced on 6 July 2026 that the work on light-field imaging technology and applications received the second prize of the **2025 Tianjin Science and Technology Progress Award**.\n\n[Announcement on Yunlong Wang's homepage](https://wylcasia.github.io/).",
+  },
+  {
+    slug: "2026-eccv-miedit",
+    title: "MIEdit accepted to ECCV 2026",
+    date: "2026-07-01",
+    kind: "news",
+    summary: "Haiyan Wei and coauthors introduce efficient diffusion image editing with semantic region control.",
+    body: "**Multi-History-Step SDE Inversion for Image Editing with Superior Regional Awareness**, by Haiyan Wei, Yunlong Wang, Huaibo Huang, Zhenan Sun, and Kunbo Zhang, was accepted to ECCV 2026.\n\nMIEdit combines multi-history-step inversion with semantic region control and introduces EditEval++ for evaluating image editing. The paper was published online on 15 September 2026.\n\n[Project and examples](https://whywwwzzzg.github.io/MIEdit/) · [Paper](https://link.springer.com/chapter/10.1007/978-3-032-37029-7_15).",
+  },
+  {
+    slug: "2026-jtcvs-fli",
+    title: "Femtosecond label-free imaging study published in JTCVS Open",
+    date: "2026-06-17",
+    kind: "news",
+    summary: "A collaborative study explores fresh-tissue imaging for intraoperative pathological assessment in thoracic oncology.",
+    body: "**Femtosecond Label-free Imaging: A Rapid and Reliable Alternative for Intraoperative Pathological Assessment in Thoracic Oncology** was announced on Yunlong Wang's homepage on 17 June 2026.\n\nThe JTCVS Open study explores optical imaging without staining or sectioning, together with exploratory AI analysis of tissue images.\n\n[Read the article](https://doi.org/10.1016/j.xjon.2026.101930).",
+  },
+  {
+    slug: "2026-aistats-fedcca",
+    title: "FedCCA accepted to AISTATS 2026",
+    date: "2026-02-07",
+    kind: "news",
+    summary: "Zhengquan Luo and collaborators bring canonical correlation analysis to federated learning with differential privacy.",
+    body: "**FedCCA: Federated Canonical Correlation Analysis** was accepted to AISTATS 2026. The work adapts cross-modal correlation analysis to distributed data using efficient matrix-vector operations and differential privacy.\n\nThe paper appears in PMLR volume 300, pages 424–432. [Paper, PDF, and citation](https://proceedings.mlr.press/v300/luo26a.html).",
+  },
+  {
     slug: "2026-icassp-antispoof",
     title: "SAME accepted to ICASSP 2026",
-    date: "2026-04-01",
+    date: "2026-01-18",
     kind: "news",
-    summary: "Yanting Wu, Qi Li, Yunlong Wang, Fangling Jiang, and Zhenan Sun will present a similarity-aware mixture-of-experts model for generalized face anti-spoofing.",
+    summary: "Yanting Wu, Qi Li, Yunlong Wang, Fangling Jiang, and Zhenan Sun developed a similarity-aware mixture-of-experts model for generalized face anti-spoofing.",
     body: "SAME: Similarity-Aware Mixture of Experts for Generalized Face Anti-Spoofing has been accepted to IEEE ICASSP 2026. The work is led by group member Yanting Wu with Qi Li, Yunlong Wang, Fangling Jiang, and Zhenan Sun.",
   },
   {

@@ -6,8 +6,8 @@ export default function HomePage() {
   const faculty = people.filter((person) => person.group === "Director" || person.group === "Faculty");
   const latestNews = news.slice(0, 4);
   const latestPapers = publications.slice(0, 4);
-  const featured = publications.find((item) => item.award) ?? latestPapers[0];
-  const side = publications.filter((item) => item.slug !== featured?.slug).slice(0, 3);
+  const featured = publications.find((item) => item.featured) ?? latestPapers[0];
+  const side = latestPapers.filter((item) => item.slug !== featured?.slug).slice(0, 3);
 
   return (
     <>
@@ -59,13 +59,17 @@ export default function HomePage() {
 
       {featured && (
         <section className="mx-auto max-w-6xl px-4 pb-8">
-          <p className="kicker text-blue-700 dark:text-blue-300">Featured</p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="kicker text-blue-700 dark:text-blue-300">Latest work</p>
+            <Link href="/publications/" className="text-sm text-blue-700 dark:text-blue-300">All publications</Link>
+          </div>
           <div className="mt-4 grid gap-4 lg:grid-cols-[1.4fr_0.8fr]">
             <Link href={`/publications/${featured.slug}/`} className="group rounded-3xl border border-zinc-200 bg-white p-8 transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-950/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-blue-700">
               <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">
                 {featured.kind} · {featured.year}
                 {featured.award ? ` · ${featured.award}` : ""}
               </p>
+              <p className="mt-3 text-sm text-blue-700 dark:text-blue-300">{featured.venue}</p>
               <h3 className="mt-4 text-3xl font-medium tracking-tight transition-colors group-hover:text-blue-700 dark:group-hover:text-blue-300">{featured.title}</h3>
               <p className="mt-4 text-sm text-zinc-500">{featured.authors.join(", ")}</p>
               <p className="mt-4 leading-7 text-zinc-600 dark:text-zinc-300">{featured.abstract || featured.venue}</p>
@@ -75,6 +79,7 @@ export default function HomePage() {
                 <Link key={item.slug} href={`/publications/${item.slug}/`} className="rounded-3xl border border-zinc-200 bg-white/70 p-5 transition hover:border-blue-300 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 dark:border-zinc-800 dark:bg-zinc-950/70 dark:hover:border-blue-700">
                   <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">{item.kind} · {item.year}</p>
                   <p className="mt-2 font-medium tracking-tight">{item.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-zinc-500">{item.venue}</p>
                 </Link>
               ))}
             </div>
