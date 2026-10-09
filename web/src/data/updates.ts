@@ -6,7 +6,8 @@ import type { NewsItem, Publication, ResearchArea } from "@/lib/types";
  * (updated 1 April 2026), and the previous SIR group pages.
  * New papers follow Dr. Wang's publication list and bibliographic records. Abstracts are
  * short descriptions of the published title and venue, not reconstructed experiments.
- * Latest work checked on 8 October 2026: https://wylcasia.github.io/
+ * Latest work checked on 9 October 2026: https://wylcasia.github.io/
+ * DOME: https://link.springer.com/article/10.1007/s11263-026-03010-y
  * MIEdit: https://link.springer.com/chapter/10.1007/978-3-032-37029-7_15
  * FLI: https://doi.org/10.1016/j.xjon.2026.101930
  * FedCCA: https://proceedings.mlr.press/v300/luo26a.html
@@ -350,6 +351,14 @@ export const extraPublications: Publication[] = [
 ];
 
 export const extraNews: NewsItem[] = [
+  {
+    slug: "2026-ijcv-dome",
+    title: "DOME published in IJCV",
+    date: "2026-10-03",
+    kind: "news",
+    summary: "Yanting Wu and collaborators introduce a memory-based framework for interpretable face anti-spoofing across domains.",
+    body: "**DOME: A Decoupled Offline-Online Memory Externalization Framework for Interpretable Domain-Generalized Face Anti-spoofing** was published in the International Journal of Computer Vision (IJCV) on 3 October 2026.\n\nAuthors: Yanting Wu, Ajian Liu, Siyu Xia, Yunlong Wang, Xinyang Song, Jie Gui, Zhenan Sun, and Qi Li.\n\nDOME separates offline memory construction from online interaction. It stores textual rules and visual prototypes, then retrieves this evidence to support face anti-spoofing predictions and their explanations across domains.\n\n[Read the published paper](https://link.springer.com/article/10.1007/s11263-026-03010-y).",
+  },
   {
     slug: "2026-ijcv-private-gaze",
     title: "Privacy-preserving gaze estimation accepted to IJCV",
